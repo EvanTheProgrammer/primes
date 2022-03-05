@@ -1,6 +1,5 @@
 use std::{env, thread, process};
 
-use crossterm::cursor;
 use crossterm::terminal::{self};
 use crossterm::event::{Event, KeyCode, KeyEvent, read};
 
@@ -31,8 +30,7 @@ fn main() {
     }
     loop {
         if is_prime(n) {
-            println!("{} is prime!", n);
-            cursor::MoveToNextLine(1);
+            print!("{} is prime!\r\n", n);
         }
         n += 1;
     }
